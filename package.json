@@ -1,6 +1,6 @@
 {
 	"name": "ts-sets",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "mathematical set theory for typescript",
 	"main": "index.js",
 	"scripts": {
