@@ -1,12 +1,19 @@
 {
 	"name": "ts-sets",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "mathematical set theory for typescript",
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
+	"exports": {
+		".": {
+			"require": "./dist/index.js",
+			"import": "./dist/index.esm.js"
+		}
+	},
+	"types": "dist/index.d.ts",
 	"keywords": [],
 	"author": "k70suk3",
 	"license": "MIT",
