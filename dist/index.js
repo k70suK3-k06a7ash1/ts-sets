@@ -19,7 +19,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export function pick(keys, obj) {
+export function collect(keys, obj) {
     var x = __spreadArray([], keys, true).reduce(
     // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>

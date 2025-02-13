@@ -1,1 +1,1 @@
-export declare function pick(keys: string[], obj: any): {};
+export declare function collect(keys: string[], obj: any): {};
