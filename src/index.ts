@@ -1,5 +1,5 @@
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export function pick(keys: string[], obj: any) {
+export function collect(keys: string[], obj: any) {
 	const x = [...keys].reduce(
 		// biome-ignore lint/performance/noAccumulatingSpread: <explanation>
 		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
