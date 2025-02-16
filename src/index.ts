@@ -1,10 +1,14 @@
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export function collect(keys: string[], obj: any) {
-	const x = [...keys].reduce(
-		// biome-ignore lint/performance/noAccumulatingSpread: <explanation>
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-		(pre, current) => ({ ...pre, [current]: obj[current] as any }),
-		{},
+export type IsKeyOf<T, K> = K extends keyof T ? true : false;
+
+export function collect<T, K extends keyof T>(
+	keys: K[],
+	obj: T,
+): Readonly<Pick<T, K>> {
+	return keys.reduce(
+		(acc, key) => {
+			(acc[key] as T[K]) = obj[key];
+			return acc;
+		},
+		{} as Readonly<Pick<T, K>>,
 	);
-	return x;
 }
