@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, expectTypeOf } from "vitest";
 import { collect, type IsKeyOf } from "./index";
 
 // テストに使用するインターフェース
@@ -45,20 +45,13 @@ describe("collect", () => {
 	});
 
 	it("型 IsKeyOf が正しく動作することを確認", () => {
+		type TestObject = { name: string; city: string };
 		type NameIsKeyOfTestObject = IsKeyOf<TestObject, "name">;
 		type CityIsKeyOfTestObject = IsKeyOf<TestObject, "city">;
 		type InvalidIsKeyOfTestObject = IsKeyOf<TestObject, "invalid">;
 
-		// @ts-expect-error
-		const _name: NameIsKeyOfTestObject extends true ? true : false = false; // Type 'false' is not assignable to type 'true'.
-		// @ts-expect-error
-		const _city: CityIsKeyOfTestObject extends true ? true : false = false; // Type 'false' is not assignable to type 'true'.
-
-		const _invalid: InvalidIsKeyOfTestObject extends false ? true : false =
-			true;
-
-		expect<true>(true as NameIsKeyOfTestObject);
-		expect<true>(true as CityIsKeyOfTestObject);
-		expect<false>(false as InvalidIsKeyOfTestObject);
+		expectTypeOf<NameIsKeyOfTestObject>().toEqualTypeOf<true>();
+		expectTypeOf<CityIsKeyOfTestObject>().toEqualTypeOf<true>();
+		expectTypeOf<InvalidIsKeyOfTestObject>().toEqualTypeOf<false>();
 	});
 });

@@ -1,13 +1,13 @@
 {
 	"name": "ts-sets",
-	"version": "0.1.10",
+	"version": "0.1.11",
 	"description": "mathematical set theory for typescript",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
 	"scripts": {
 		"build": "tsc",
-		"test": "vitest run"
+		"test": "vitest --typecheck run"
 	},
 	"keywords": [],
 	"author": "k70suk3",
